@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @reviews = @restaurant.reviews
   end
 
   def new
@@ -25,8 +26,11 @@ class RestaurantsController < ApplicationController
   end
 
   def update
-    @restaurant.update(restaurant_params)
-    redirect_to restaurant_path(@restaurant)
+    if @restaurant.update(restaurant_params)
+      redirect_to restaurant_path(@restaurant)
+    else
+      render :edit
+    end
   end
 
   def destroy

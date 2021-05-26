@@ -11,3 +11,15 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+:root {
+  font-size: calc(0.5em + 0.75vw);
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
